@@ -31,7 +31,7 @@ coverage_base.info:
 		--remove $(abs_top_builddir)/coverage_base.info \
 		"/usr*" \
 		"/opt*" \
-	-o $(abs_top_builddir)/coverage_base.info
+		--output-file $(abs_top_builddir)/coverage_base.info
 
 coverage_delta.info:
 	@echo Collecting delta coverage data
@@ -49,7 +49,7 @@ coverage_delta.info:
 		--remove $(abs_top_builddir)/coverage_delta.info \
 		"/usr*" \
 		"/opt*" \
-		-o $(abs_top_builddir)/coverage_delta.info
+		--output-file $(abs_top_builddir)/coverage_delta.info
 
 coverage.info:
 		@echo Combining baseline and delta coverage data
