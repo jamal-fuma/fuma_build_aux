@@ -35,8 +35,7 @@ coverage_base.info:
 	@echo Stripping external coverage data from baseline
 	$(LCOV) \
 		--remove $(abs_top_builddir)/coverage_base.info \
-		"/usr*" \
-		"/opt*" \
+		$(LCOV_FILTER_DIR) \
 		--output-file $(abs_top_builddir)/coverage_base.info
 
 coverage_delta.info:
@@ -53,8 +52,7 @@ coverage_delta.info:
 	@echo Stripping external coverage data from delta
 	$(LCOV) \
 		--remove $(abs_top_builddir)/coverage_delta.info \
-		"/usr*" \
-		"/opt*" \
+		$(LCOV_FILTER_DIR) \
 		--output-file $(abs_top_builddir)/coverage_delta.info
 
 coverage.info:
