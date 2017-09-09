@@ -13,6 +13,12 @@ coverage-html:
 	$(MAKE) $(AM_MAKEFLAGS) coverage_delta.info
 	$(MAKE) $(AM_MAKEFLAGS) generate-coverage-html
 
+LCOV_FILTER_DIR= \
+		"$(abs_top_srcdir)/sources/include/3rd_party*" \
+		"/Applications*" \
+		"/usr*" \
+		"/opt*"
+
 coverage_base.info:
 	@echo Collecting baseline coverage data
 	$(LCOV) \
